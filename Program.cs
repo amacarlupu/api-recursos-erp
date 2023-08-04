@@ -20,10 +20,14 @@ builder.Configuration.GetSection("UserDatabase"));
 builder.Services.Configure<TokenSetting>(
 builder.Configuration.GetSection("Jwt"));
 
+builder.Services.Configure<ProductLinesDatabaseSettings>(
+builder.Configuration.GetSection("ProductLinesDatabase"));
+
 builder.Services.AddSingleton<SupportService>();
 builder.Services.AddSingleton<FlujosNowService>();
 builder.Services.AddSingleton<AuthenticateService>();
 builder.Services.AddSingleton<TokenService>();
+builder.Services.AddSingleton<ProductLinesService>();
 
 builder.Services.AddControllers();
 
