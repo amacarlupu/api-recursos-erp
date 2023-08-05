@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using SupportPageApi.Models;
 using SupportPageApi.Services;
@@ -18,6 +19,7 @@ namespace SupportPageApi.Controllers
         }
 
 
+        [EnableCors("PoliciyNow")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] User usuario)
         {

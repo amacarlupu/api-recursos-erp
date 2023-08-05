@@ -1,6 +1,7 @@
 ﻿using SupportPageApi.Models;
 using SupportPageApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 
 namespace SupportPageApi.Controllers;
 
@@ -15,10 +16,12 @@ public class SupportController : ControllerBase
     public SupportController(SupportService supportService) =>
         _supportService = supportService;
 
+    [EnableCors("PoliciyNow")]
     [HttpGet]
     public async Task<List<ResourcesPage>> Get() =>
         await _supportService.GetAsync();
 
+    [EnableCors("PoliciyNow")]
     [HttpGet("{id}")]
     public async Task<ActionResult<ResourcesPage>> Get(string id)
     {

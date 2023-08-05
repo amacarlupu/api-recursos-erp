@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using SupportPageApi.Models;
 using SupportPageApi.Services;
 
@@ -18,9 +19,10 @@ namespace SupportPageApi.Controllers
             _authenticateService = authenticateService;
             _tokenService = tokenService;
         }
-            
+
 
         // GET: api/<Authenticate>
+        [EnableCors("PoliciyNow")]
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -28,12 +30,14 @@ namespace SupportPageApi.Controllers
         }
 
         // GET api/<Authenticate>/5
+        [EnableCors("PoliciyNow")]
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
+        [EnableCors("PoliciyNow")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] User usuario)
         {
@@ -64,6 +68,7 @@ namespace SupportPageApi.Controllers
         }
 
         // PUT api/<Authenticate>/5
+        [EnableCors("PoliciyNow")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {

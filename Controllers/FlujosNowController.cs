@@ -2,6 +2,7 @@
 using SupportPageApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace SupportPageApi.Controllers;
 
@@ -15,11 +16,13 @@ public class FlujosNowController : ControllerBase
     public FlujosNowController(FlujosNowService flujosnowService) =>
         _flujosnowService = flujosnowService;
 
+    [EnableCors("PoliciyNow")]
     [HttpGet]
     [Authorize]
     public async Task<List<FlujosNow>> Get() =>
         await _flujosnowService.GetAsync();
 
+    [EnableCors("PoliciyNow")]
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<FlujosNow>> Get(string id)
     {
