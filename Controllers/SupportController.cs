@@ -16,12 +16,12 @@ public class SupportController : ControllerBase
     public SupportController(SupportService supportService) =>
         _supportService = supportService;
 
-    [EnableCors("PoliciyNow")]
+    [EnableCors("PolicyNow")]
     [HttpGet]
     public async Task<List<ResourcesPage>> Get() =>
         await _supportService.GetAsync();
 
-    [EnableCors("PoliciyNow")]
+    [EnableCors("PolicyNow")]
     [HttpGet("{id}")]
     public async Task<ActionResult<ResourcesPage>> Get(string id)
     {

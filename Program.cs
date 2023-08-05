@@ -49,7 +49,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 // Crear politicas CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("PoliciyNow",
+    options.AddPolicy("PolicyNow",
         policy =>
         {
             policy.WithOrigins("https://localhost:3000",

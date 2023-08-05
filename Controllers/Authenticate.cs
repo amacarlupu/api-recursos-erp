@@ -22,7 +22,7 @@ namespace SupportPageApi.Controllers
 
 
         // GET: api/<Authenticate>
-        [EnableCors("PoliciyNow")]
+        [EnableCors("PolicyNow")]
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -30,14 +30,14 @@ namespace SupportPageApi.Controllers
         }
 
         // GET api/<Authenticate>/5
-        [EnableCors("PoliciyNow")]
+        [EnableCors("PolicyNow")]
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        [EnableCors("PoliciyNow")]
+        [EnableCors("PolicyNow")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] User usuario)
         {
@@ -68,7 +68,7 @@ namespace SupportPageApi.Controllers
         }
 
         // PUT api/<Authenticate>/5
-        [EnableCors("PoliciyNow")]
+        [EnableCors("PolicyNow")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {

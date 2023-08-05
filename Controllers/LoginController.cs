@@ -19,7 +19,7 @@ namespace SupportPageApi.Controllers
         }
 
 
-        [EnableCors("PoliciyNow")]
+        [EnableCors("PolicyNow")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] User usuario)
         {

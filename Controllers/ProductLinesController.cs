@@ -19,12 +19,12 @@ namespace SupportPageApi.Controllers
             _productsService = productsService;
         }
 
-        [EnableCors("PoliciyNow")]
+        [EnableCors("PolicyNow")]
         [HttpGet]
         public async Task<List<ProductLines>> Get() =>
        await _productsService.GetAsync();
 
-        [EnableCors("PoliciyNow")]
+        [EnableCors("PolicyNow")]
         [HttpGet("{id:length(24)}")]
         public async Task<ActionResult<ProductLines>> Get(string id)
         {

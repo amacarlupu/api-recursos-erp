@@ -16,13 +16,13 @@ public class FlujosNowController : ControllerBase
     public FlujosNowController(FlujosNowService flujosnowService) =>
         _flujosnowService = flujosnowService;
 
-    [EnableCors("PoliciyNow")]
+    [EnableCors("PolicyNow")]
     [HttpGet]
     [Authorize]
     public async Task<List<FlujosNow>> Get() =>
         await _flujosnowService.GetAsync();
 
-    [EnableCors("PoliciyNow")]
+    [EnableCors("PolicyNow")]
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<FlujosNow>> Get(string id)
     {
